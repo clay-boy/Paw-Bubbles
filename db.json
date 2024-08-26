@@ -1,0 +1,57 @@
+{
+    "services": [
+      {
+        "id": "full-groom",
+        "name": "Full Groom",
+        "pricing": {
+          "small": 80,
+          "medium": 95,
+          "large": 120,
+          "xxl": [160, 180]
+        }
+      },
+      {
+        "id": "touch-up-groom",
+        "name": "Touch Up Groom",
+        "pricing": {
+          "small": 70,
+          "medium": 80,
+          "large": 90,
+          "xxl": 110
+        }
+      },
+      {
+        "id": "hair-cut-no-bath-groom",
+        "name": "Hair Cut - No Bath Groom",
+        "pricing": {
+          "small": 60,
+          "medium": 70,
+          "large": 85,
+          "xxl": 100
+        }
+      },
+      {
+        "id": "bath-and-nails",
+        "name": "Bath and Nails",
+        "pricing": {
+          "small": 50,
+          "medium": 65,
+          "large": 75,
+          "xxl": 90
+        }
+      },
+      {
+        "id": "extras",
+        "name": "Extras",
+        "pricing": {
+          "nail-trim": 15,
+          "nail-grinding": 15,
+          "tooth-brushing": 15,
+          "paw-soak": 15,
+          "bandana-bow": 30
+        }
+      }
+    ],
+    "bookings": []
+  }
+  
