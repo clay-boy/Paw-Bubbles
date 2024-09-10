@@ -1,85 +1,55 @@
-// src/components/BookingModal.js
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
+import BookingModal from './BookingModal';
 
-function BookingModal({ service, dogSize, onClose, onSubmit }) {
-    const [formData, setFormData] = useState({
-        ownerName: '',
-        petName: '',
-        email: '',
-        location: '',
-        bookingDate: '',
-    });
+function BookingContainer() {
+  const [showModal, setShowModal] = useState(false);
+  
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
 
-    const handleChange = (event) => {
-        setFormData({
-            ...formData,
-            [event.target.name]: event.target.value,
+  const handleBookingSubmit = (bookingData) => {
+    fetch('https://example.com/api/bookings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(bookingData),
+    })
+      .then((response) => {
+        if (response.ok) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Booking confirmed!',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setShowModal(false); // Close the modal after success
+        } else {
+          throw new Error('Booking failed');
+        }
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
         });
-    };
+      });
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const bookingData = {
-            ...formData,
-            service: service.name,
-            dogSize,
-            price: service.pricing[dogSize],
-        };
-        onSubmit(bookingData);
-    };
-
-    return (
-        <div className="modal show">
-            <div className="modal-content">
-                <span className="close" onClick={onClose}>
-                    &times;
-                </span>
-                <h2>Booking Form</h2>
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        name="ownerName"
-                        placeholder="Owner's Name"
-                        value={formData.ownerName}
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="petName"
-                        placeholder="Pet's Name"
-                        value={formData.petName}
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="location"
-                        placeholder="Location"
-                        value={formData.location}
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="date"
-                        name="bookingDate"
-                        value={formData.bookingDate}
-                        onChange={handleChange}
-                        required
-                    />
-                    <button type="submit">Confirm Booking</button>
-                </form>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <button onClick={() => setShowModal(true)}>Book Now</button>
+      {showModal && (
+        <BookingModal
+          service={{ name: 'Dog Walking', pricing: { small: 20, medium: 30, large: 40 } }}
+          dogSize="medium"
+          onClose={handleModalClose}
+          onSubmit={handleBookingSubmit}
+        />
+      )}
+    </div>
+  );
 }
 
-export default BookingModal;
+export default BookingContainer;

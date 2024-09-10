@@ -1,0 +1,55 @@
+.about-dogs-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .dog-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+  }
+  
+  .dog-section.left {
+    flex-direction: row;
+  }
+  
+  .dog-section.right {
+    flex-direction: row-reverse;
+  }
+  
+  .dog-image {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .dog-image:hover {
+    transform: scale(1.05);
+  }
+  
+  .dog-description {
+    max-width: 500px;
+  }
+  
+  .dog-description h2 {
+    font-size: 2.5rem;
+    color: #ff6f61;
+    margin-bottom: 10px;
+  }
+  
+  .dog-description p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .dog-section:hover {
+    transform: translateY(-10px);
+  }
+  

@@ -1,6 +1,5 @@
-// BookingForm.js
-
 import React, { useState } from 'react';
+import Swal from 'sweetalert2'; // Import SweetAlert2
 
 function BookingForm({ serviceId, onClose }) {
   const [ownerName, setOwnerName] = useState('');
@@ -35,10 +34,24 @@ function BookingForm({ serviceId, onClose }) {
     .then(response => response.json())
     .then(data => {
       console.log('Booking added:', data);
-      alert('Booking confirmed!');
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your booking has been confirmed!',
+        showConfirmButton: false,
+        timer: 1500
+      });
       onClose();  
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+      console.error('Error:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<a href="#">Why do I have this issue?</a>'
+      });
+    });
   };
 
   return (

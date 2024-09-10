@@ -5,6 +5,8 @@ import BookingModal from "./components/BookingModal";
 import Customers_view from "./components/Customers_view";
 import Footer from "./components/Contacts";
 import Navbar from "./components/NavBar";
+import About from "./components/About";
+
 
 function App() {
   const [services, setServices] = useState([]);
@@ -27,7 +29,10 @@ function App() {
 
   return (
     <div className="app">
+
       <Navbar />
+      <About /
+      >
       <div className="service-container">
         {services.map((service) => (
           <ServiceCard key={service.id} service={service} onBook={handleBook} />
@@ -36,7 +41,9 @@ function App() {
       {isModalOpen && (
         <BookingModal service={selectedService} onClose={closeModal} />
       )}
+    
       <Customers_view />
+    
       <Footer />
     </div>
   );
