@@ -1,0 +1,235 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Stylish modern font */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Light blur effect */
+    backdrop-filter: blur(10px); /* Blur the background */
+    color: #333;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Ensure the navbar is above other content */
+}
+
+/* Logo and Title */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.paw-icon {
+    color: #ff6347; /* Paw icon in coral */
+    font-size: 32px;
+    margin-right: 10px;
+}
+
+.brand-title {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Pacifico', cursive; /* Fancy font for Paws & Bubbles */
+    color: #ff6347;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6347; /* Coral color on hover */
+}
+
+/* CTA Button */
+.nav-cta .btn-primary {
+    background-color: #ff6347; /* Coral Button */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.nav-cta .btn-primary:hover {
+    background-color: #ff4500; /* Darker coral */
+}
+
+/* Header Content Styling */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+    padding: 0 20px;
+    background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    backdrop-filter: blur(5px); /* Blurred background for text readability */
+}
+
+.header-content h2 {
+    font-size: 4rem; /* Responsive font size */
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header-content p {
+    font-size: 1.5rem; /* Responsive font size */
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: white;
+    color: #ff6347;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #f8f8f8;
+    color: #ff6347;
+}
+
+/* Feedback Component Styling */
+.feedback-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.feedback-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating-container {
+    margin-bottom: 20px;
+}
+
+.rating-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.stars {
+    display: flex;
+    font-size: 2rem;
+    color: #ddd; /* Default star color */
+}
+
+.stars .fa-star {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.stars .fa-star.filled {
+    color: #ff6347; /* Coral color when filled */
+}
+
+.stars .fa-star:hover,
+.stars .fa-star:hover ~ .fa-star {
+    color: #ff6347; /* Coral color on hover */
+}
+
+.form-error {
+    color: #ff6347;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.feedback-textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #ff6347; /* Coral button */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #ff4500; /* Darker coral on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .header-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+}

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Home from "./components/Home";
 import ServiceCard from "./components/ServiceCard";
-import BookingModal from "./components/BookingModal";
 import Customers_view from "./components/Customers_view";
 import Footer from "./components/Contacts";
 import Navbar from "./components/NavBar";
 import About from "./components/About";
+import BookingForm from "./components/BookingForm";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 function App() {
@@ -29,21 +30,17 @@ function App() {
 
   return (
     <div className="app">
-
       <Navbar />
-      <About /
-      >
+      <About />
       <div className="service-container">
         {services.map((service) => (
           <ServiceCard key={service.id} service={service} onBook={handleBook} />
         ))}
       </div>
-      {isModalOpen && (
-        <BookingModal service={selectedService} onClose={closeModal} />
-      )}
-    
+
+      <BookingForm />
       <Customers_view />
-    
+
       <Footer />
     </div>
   );

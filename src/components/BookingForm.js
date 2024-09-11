@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2'; // Import SweetAlert2
+import './BookingForm.css'; // Import the CSS file for styling
 
 function BookingForm({ serviceId, onClose }) {
   const [ownerName, setOwnerName] = useState('');
@@ -12,6 +13,24 @@ function BookingForm({ serviceId, onClose }) {
 
   const handleBooking = (e) => {
     e.preventDefault();
+
+    // Check if all fields are filled
+    if (!ownerName || !petName || !email || !location || !date || !size) {
+      let missingFields = [];
+      if (!ownerName) missingFields.push('Owner Name');
+      if (!petName) missingFields.push('Pet Name');
+      if (!email) missingFields.push('Email');
+      if (!location) missingFields.push('Location');
+      if (!date) missingFields.push('Date');
+      if (!size) missingFields.push('Dog Size');
+
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: `Please fill out the following fields: ${missingFields.join(', ')}`,
+      });
+      return;
+    }
 
     const newBooking = {
       serviceId,
@@ -33,7 +52,6 @@ function BookingForm({ serviceId, onClose }) {
     })
     .then(response => response.json())
     .then(data => {
-      console.log('Booking added:', data);
       Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -41,21 +59,20 @@ function BookingForm({ serviceId, onClose }) {
         showConfirmButton: false,
         timer: 1500
       });
-      onClose();  
+      onClose(); 
     })
     .catch(error => {
-      console.error('Error:', error);
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Something went wrong!',
-        footer: '<a href="#">Why do I have this issue?</a>'
+        text: 'Something went wrong with the booking!',
       });
     });
   };
 
   return (
-    <form onSubmit={handleBooking}>
+    <form onSubmit={handleBooking} className="booking-form">
+      <h2>Book Your Service</h2>
       <input type="text" placeholder="Owner Name" value={ownerName} onChange={(e) => setOwnerName(e.target.value)} />
       <input type="text" placeholder="Pet Name" value={petName} onChange={(e) => setPetName(e.target.value)} />
       <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -68,8 +85,7 @@ function BookingForm({ serviceId, onClose }) {
         <option value="large">Large</option>
         <option value="xxl">XXL</option>
       </select>
-      {/* Assume price is calculated based on size and service */}
-      <button type="submit">Book Now</button>
+      <button type="submit" className="submit-btn">Book Now</button>
     </form>
   );
 }
