@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2'; // Import SweetAlert2
 
 function ServiceCard({ service, onBook }) {
     const [selectedSize, setSelectedSize] = useState(''); // State for selected dog size
@@ -14,9 +15,21 @@ function ServiceCard({ service, onBook }) {
 
     const handleBookNow = () => {
         if (selectedSize) {
+            // SweetAlert confirmation
+            Swal.fire({
+                icon: 'success',
+                title: 'Booking Confirmed!',
+                text: `You've booked ${service.name} for a ${selectedSize} dog at $${price}.`,
+                showConfirmButton: true,
+            });
             onBook(service.name, selectedSize, price);
         } else {
-            alert('Please select a dog size before booking.');
+            // SweetAlert error if no size selected
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please select a dog size before booking!',
+            });
         }
     };
 
