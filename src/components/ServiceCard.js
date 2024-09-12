@@ -18,8 +18,10 @@ function ServiceCard({ service, onBook }) {
             // SweetAlert confirmation
             Swal.fire({
                 icon: 'success',
-                title: 'Booking Confirmed!',
-                text: `You've booked ${service.name} for a ${selectedSize} dog at $${price}.`,
+                title: 'Thanks!',
+            
+                text: `You've Selected ${service.name} for a ${selectedSize} dog at $${price}. 
+                        Proceed to booking form`,
                 showConfirmButton: true,
             });
             onBook(service.name, selectedSize, price);
@@ -99,7 +101,7 @@ function ServiceCard({ service, onBook }) {
                 onMouseOver={(e) => (e.target.style.backgroundColor = styles.buttonHover.backgroundColor)}
                 onMouseOut={(e) => (e.target.style.backgroundColor = styles.button.backgroundColor)}
             >
-                Book Now
+                Select
             </button>
         </div>
     );

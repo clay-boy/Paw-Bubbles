@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ServiceCard from "./components/ServiceCard";
+import Services  from "./components/Services";
 import Customers_view from "./components/Customers_view";
 import Footer from "./components/Contacts";
 import Navbar from "./components/NavBar";
@@ -31,6 +32,7 @@ function App() {
     <div className="app">
       <Navbar />
       <About />
+      <Services />
       <div className="service-container">
         {services.map((service) => (
           <ServiceCard key={service.id} service={service} onBook={handleBook} />

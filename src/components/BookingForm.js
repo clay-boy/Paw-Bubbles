@@ -53,13 +53,13 @@ function BookingForm({ serviceId, onClose }) {
     .then(response => response.json())
     .then(data => {
       Swal.fire({
-        position: 'top-end',
+        position: 'center',
         icon: 'success',
         title: 'Your booking has been confirmed!',
         showConfirmButton: false,
         timer: 1500
       });
-      onClose(); 
+    
     })
     .catch(error => {
       Swal.fire({
