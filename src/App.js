@@ -7,7 +7,7 @@ import Navbar from "./components/NavBar";
 import About from "./components/About";
 import BookingForm from "./components/BookingForm";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import Services from "./components/Services";
 
 function App() {
   const [services, setServices] = useState([]);
@@ -37,6 +37,7 @@ function App() {
           <ServiceCard key={service.id} service={service} onBook={handleBook} />
         ))}
       </div>
+      <Services />
 
       <BookingForm />
       <Customers_view />

@@ -1,0 +1,74 @@
+.paw-bubbles-services {
+    padding: 60px 30px;
+    background-color: rgba(243, 244, 246, 0.1); /* Semi-transparent background */
+    text-align: center;
+    backdrop-filter: blur(8px); /* Blur effect */
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.5); /* Optional shadow */
+    border-radius: 15px; /* Optional for rounded corners */
+}
+
+  
+  
+  .paw-bubbles-services h2 {
+    font-size: 3rem;
+    color: #ff6347; /* Updated color */
+    margin-bottom: 20px;
+  }
+  
+  .paw-bubbles-services p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+  }
+  
+  .services-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+.service-card {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.5); /* Updated shadow to #ff6347 */
+    width: 350px;
+    text-align: left;
+    backdrop-filter: blur(8px); /* Blur effect for frosted look */
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Slight hover effect */
+}
+
+
+  .service-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .service-card h3 {
+    color: #ff6347; /* Updated color */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .service-card p {
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .service-card ul {
+    margin: 10px 0;
+    padding-left: 20px;
+    color: #555;
+  }
+  
+  .service-card ul li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+  }

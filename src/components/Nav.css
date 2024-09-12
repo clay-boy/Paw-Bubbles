@@ -124,13 +124,15 @@
 
 /* Feedback Component Styling */
 .feedback-container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.5); /* #ff6347 shadow */
+    backdrop-filter: blur(8px); /* Blur effect */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
 .feedback-title {
