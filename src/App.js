@@ -6,7 +6,7 @@ import Navbar from "./components/NavBar";
 import About from "./components/About";
 import BookingForm from "./components/BookingForm";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Services from "./components/Services";
+
 
 function App() {
   const [services, setServices] = useState([]);
@@ -30,14 +30,12 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-      <Services />
       <About />
       <div className="service-container">
         {services.map((service) => (
           <ServiceCard key={service.id} service={service} onBook={handleBook} />
         ))}
       </div>
-
 
       <BookingForm />
       <Customers_view />
