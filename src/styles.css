@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  background-image: url('https://wallpapers.com/images/high/paws-background-sll31499n4y71ij3.webp'); 
+  /* background-image: url('https://wallpapers.com/images/high/paws-background-sll31499n4y71ij3.webp');  */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -174,8 +174,6 @@ body {
 
 /* Footer Styles */
 .footer {
-  background-color: #007bff;
-  color: rgb(213, 27, 27);
   padding: 20px;
   text-align: center;
   position: relative;
@@ -214,10 +212,6 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-.footer button:hover {
-  background-color: #218838;
 }
 
 .reviews {

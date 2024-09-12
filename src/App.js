@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ServiceCard from "./components/ServiceCard";
 import Services  from "./components/Services";
 import Customers_view from "./components/Customers_view";
-import Footer from "./components/Contacts";
+import Footer from "./components/Footer";
 import Navbar from "./components/NavBar";
 import About from "./components/About";
 import BookingForm from "./components/BookingForm";

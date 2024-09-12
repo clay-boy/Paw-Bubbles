@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './AboutDogs.css'; // Make sure this file is in the same directory
 
 const dogs = [
