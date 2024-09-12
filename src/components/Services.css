@@ -1,6 +1,6 @@
 .paw-bubbles-services {
     padding: 60px 30px;
-    background-color: rgba(243, 244, 246, 0.1); /* Semi-transparent background */
+    background-color: rgba(243, 244, 246, 0.01); /* Semi-transparent background */
     text-align: center;
     backdrop-filter: blur(8px); /* Blur effect */
     box-shadow: 0 4px 12px rgba(255, 99, 71, 0.5); /* Optional shadow */
